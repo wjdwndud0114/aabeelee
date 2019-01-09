@@ -1,8 +1,21 @@
 import React from 'react'
-import { withSiteData } from 'react-static'
+import styled from 'styled-components'
 
-export default withSiteData(() => (
-  <div style={{ textAlign: 'center' }}>
-    <h1>Welcome to React-Static</h1>
-  </div>
-))
+const StyledIndex = styled.div`
+  width: 100%;
+  height: 500px;
+
+  background-color: aliceblue;
+`
+
+export default class index extends React.Component {
+  state = {}
+
+  render() {
+    return (
+      <StyledIndex>
+
+      </StyledIndex>
+    )
+  }
+}

@@ -1,20 +1,55 @@
 import React from 'react'
 import { Root, Routes } from 'react-static'
-import { Link } from '@reach/router'
+import { Transition, animated } from 'react-spring'
+import styled, { createGlobalStyle } from 'styled-components'
 
-import './app.css'
+import NavBar from './NavBar'
+
+import './fonts/fonts.min.css'
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+  }
+`
+
+const StyledDiv = styled.div`
+  
+`
 
 function App() {
   return (
     <Root>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-      </nav>
-      <div className="content">
-        <Routes />
-      </div>
+      <GlobalStyle />
+      <NavBar />
+      <StyledDiv className="content">
+        <Routes>
+          {({ routePath, getComponentForPath }) => {
+            return (
+              <Transition
+                native
+                items={routePath}
+                from={{ transform: 'translateY(100px)', opacity: 0 }}
+                enter={{ transform: 'translateY(0px)', opacity: 1 }}
+                leave={{ transform: 'translateY(100px)', opacity: 0 }}
+              >
+                {item => props => {
+                  const Comp = getComponentForPath(item)
+                  return (
+                    <animated.div style={props}>
+                      <Comp />
+                    </animated.div>
+                  )
+                }}
+              </Transition>
+            )
+          }}
+        </Routes>
+      </StyledDiv>
     </Root>
   )
 }
