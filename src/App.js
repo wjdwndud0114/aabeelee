@@ -10,15 +10,15 @@ import './fonts/fonts.min.css'
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Proxima Nova', Georgia, sans-serif;
-    font-weight: 500;
+    font-weight: 300;
     font-size: 16px;
     margin: 0;
     padding: 0;
+    overflow-y: hidden;
   }
 `
 
 const StyledDiv = styled.div`
-  
 `
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
               <Transition
                 native
                 items={routePath}
-                from={{ transform: 'translateY(100px)', opacity: 0 }}
+                from={{ position: 'absolute', transform: 'translateY(100px)', opacity: 0 }}
                 enter={{ transform: 'translateY(0px)', opacity: 1 }}
                 leave={{ transform: 'translateY(100px)', opacity: 0 }}
               >

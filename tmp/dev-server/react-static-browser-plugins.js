@@ -3,7 +3,7 @@
 
 // Plugins
 const plugins = [{
-  location: "/mnt/c/Users/kevin/Desktop/repos/aabeelee",
+  location: "/mnt/c/Users/Kevin/Desktop/repos/aabeelee",
   plugins: [],
   hooks: {}
 }]
