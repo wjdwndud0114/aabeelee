@@ -2,17 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import Carousel from 'nuka-carousel'
 
-import main_banner_1 from '../media/main_banner_1.jpg'
-import main_banner_2 from '../media/main_banner_2.jpg'
-import main_banner_3 from '../media/main_banner_3.jpg'
+import main_bg from '../media/main_bg.jpg'
 
 const StyledIndex = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
 
   .main-parallax-container {
     perspective: 1px;
+    perspective-origin: center;
     transform-style: preserve-3d;
     height: 100vh;
     overflow-x: hidden;
@@ -27,9 +25,9 @@ const StyledIndex = styled.div`
   }
   .main-img {
     position: relative;
-    transform: translateZ(-1px) scale(2);
+    transform: translate3D(-8px, 0px, -1px) scale(2);
     z-index: -1;
-    background-image: url(${main_banner_3});
+    background-image: url(${main_bg});
     background-position: top;
     background-size: cover;
     display: flex;
@@ -38,8 +36,6 @@ const StyledIndex = styled.div`
 `
 
 export default class index extends React.Component {
-  state = {}
-
   render () {
     return (
       <StyledIndex>

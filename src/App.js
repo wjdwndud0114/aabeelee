@@ -33,6 +33,7 @@ function App() {
               <Transition
                 native
                 items={routePath}
+                onStart={()=>{window.dispatchEvent(new CustomEvent("resetNav"))}}
                 from={{ position: 'absolute', transform: 'translateY(100px)', opacity: 0 }}
                 enter={{ transform: 'translateY(0px)', opacity: 1 }}
                 leave={{ transform: 'translateY(100px)', opacity: 0 }}
