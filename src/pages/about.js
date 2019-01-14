@@ -31,20 +31,26 @@ const StyledAbout = styled.div`
     background-position: top;
     background-size: cover;
     display: flex;
-    height: 100vh;
+    justify-content: center;
+    height: 50vh;
+  }
+  .main-img h1 {
+    display: flex;
+    color: #fff;    
   }
 `
 
 export default class about extends React.Component {
  componentDidMount() {
-  console.log("test")
  } 
 
   render () {
     return (
       <StyledAbout>
         <div className="main-parallax-container">
-          <div className="main-img" />
+          <div className="main-img">
+            <h1>About Me</h1>
+          </div>
           <div className="content-container">
             <div className="main-content">
               <p>ʻO Lorem Ipsum kahi haʻahaʻa wale nō o ka paʻi a me keʻano o nāʻoihana. ʻO Lorem Ipsum ka 'ōlelo papahana maʻamau o kaʻoihana o ka makahiki 1500, i ka wā i lawe ai kekahi mea paʻi kiʻiʻole i keʻano o ka type a scrambled iā ia e hana i kahi puke kiko'ī. ʻAʻole i ola wale i kaʻelima mau kenekulia, akā,ʻo ka leleʻana hoʻi i nāʻano o ka lolouila, e hoʻololiʻoleʻia ana. Ua hoʻolahaʻia i nā makahiki 1960 me ka hoʻokuʻuʻana i nā pepa Letraset i loko o nā moʻolelo Lorem Ipsum, a me nā mea hou aku me ka polokalamu hoʻopuka pākī e like me Aldus PageMaker me nā papa o Lorem Ipsum.</p>
