@@ -6,7 +6,6 @@ import about_bg from '../media/about_bg.jpg'
 const StyledAbout = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
 
   .main-parallax-container {
     perspective: 1px;
@@ -21,18 +20,18 @@ const StyledAbout = styled.div`
     background-color: #fff;
   }
   .main-content {
-    padding: 5rem 15rem;
   }
   .main-img {
     position: relative;
-    transform: translate3D(-8px, 0px, -1px) scale(2);
+    transform: translate3D(-8px, 0px, -1px) scale(4);
     z-index: -1;
     background-image: url(${about_bg});
     background-position: top;
     background-size: cover;
     display: flex;
     justify-content: center;
-    height: 50vh;
+    height: 33.33vh;
+    margin-top: 7rem;
   }
   .main-img h1 {
     display: flex;

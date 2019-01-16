@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Carousel from 'nuka-carousel'
 
 import main_bg from '../media/main_bg.jpg'
 
@@ -21,26 +20,35 @@ const StyledIndex = styled.div`
     background-color: #fff;
   }
   .main-content {
-    padding: 5rem 15rem;
   }
   .main-img {
     position: relative;
-    transform: translate3D(-8px, 0px, -1px) scale(2);
+    transform: translate3D(-8px, 0, -1px) scale(2);
     z-index: -1;
     background-image: url(${main_bg});
     background-position: top;
     background-size: cover;
     display: flex;
-    height: 100vh;
   }
 `
 
 export default class index extends React.Component {
   render () {
+    const styles = {
+      bgBig: {
+        height: '100vh'
+      },
+      bgSmall: {
+        height: '33.33vh',
+        marginTop: '7rem',
+        transform: 'translate3D(-8px, 0, -1px) scale(4)'
+      }
+    }
+    const { bgBig, bgSmall } = styles;
     return (
       <StyledIndex>
         <div className="main-parallax-container">
-          <div className="main-img" />
+          <div className="main-img" style={this.props.isMobile ? bgSmall : bgBig} />
           <div className="content-container">
             <div className="main-content">
               <p>ʻO Lorem Ipsum kahi haʻahaʻa wale nō o ka paʻi a me keʻano o nāʻoihana. ʻO Lorem Ipsum ka 'ōlelo papahana maʻamau o kaʻoihana o ka makahiki 1500, i ka wā i lawe ai kekahi mea paʻi kiʻiʻole i keʻano o ka type a scrambled iā ia e hana i kahi puke kiko'ī. ʻAʻole i ola wale i kaʻelima mau kenekulia, akā,ʻo ka leleʻana hoʻi i nāʻano o ka lolouila, e hoʻololiʻoleʻia ana. Ua hoʻolahaʻia i nā makahiki 1960 me ka hoʻokuʻuʻana i nā pepa Letraset i loko o nā moʻolelo Lorem Ipsum, a me nā mea hou aku me ka polokalamu hoʻopuka pākī e like me Aldus PageMaker me nā papa o Lorem Ipsum.</p>
@@ -55,17 +63,6 @@ export default class index extends React.Component {
             </div>
           </div>
         </div>
-        {/*<Carousel
-          autoplay={true}
-          autoplayInterval={5000}
-          renderCenterLeftControls={() => null}
-          renderCenterRightControls={() => null}
-          pauseOnHover={false}
-          wrapAround={true}>
-          <img src={main_banner_1} alt="Banner image 1" />
-          <img src={main_banner_2} alt="Banner image 2" />
-          <img src={main_banner_3} alt="Banner image 3" />
-        </Carousel>*/}
       </StyledIndex>
     )
   }

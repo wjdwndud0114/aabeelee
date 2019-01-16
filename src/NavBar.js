@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from '@reach/router'
 import styled from 'styled-components'
+import Menu from 'react-burger-menu/lib/menus/slide'
 
 import logo from './media/logo.png'
 
@@ -27,7 +28,7 @@ const StyledNavBar = styled.div`
     position: relative;
   }
 
-  nav > a:before {
+  nav a:before {
     content: "";
     position: absolute;
     width: 100%;
@@ -39,7 +40,7 @@ const StyledNavBar = styled.div`
     transform: scaleX(0);
     transition: all 0.3s ease-in-out 0s;
   }
-  nav > a:hover:before {
+  nav a:hover:before {
     visibility: visible;
     transform: scaleX(1);
   }
@@ -49,11 +50,57 @@ const StyledNavBar = styled.div`
     align-items: center;
     color: #222;
     font-weight: bold;
-    transition: font-size 1s;
+    transition: all 0.5s ease-in-out 0s;
   }
   .logo img {
     height: 40px;
-    padding: 0 1.5rem 0 0;
+    padding: 0 0.5rem;
+  }
+
+  /* buger menu */
+  .bm-burger-button {
+    position: relative;
+    margin-right: 1rem;
+    width: 36px;
+    height: 30px;
+  }
+  .bm-burger-bars {
+    background: #444;
+  }
+  .bm-burger-bars-hover {
+    background: #545454;
+  }
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+  .bm-cross {
+    background: #bdc3c7;
+  }
+  .bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+  }
+  .bm-menu {
+    transform: translateY(-13px);
+    background: rgba(51,51,51,0.97);
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+  }
+  .bm-morph-shape {
+    fill: rgba(51,51,51,0.97);
+  }
+  .bm-item-list {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  .bm-item-list a {
+    color: #bdc3c7;
+    text-align: center;
+  }
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
   }
 `
 
@@ -71,15 +118,19 @@ export default class NavBar extends React.Component {
   }
 
   handleScroll = (event) => {
+    if(this.props.isMobile) {
+      this.setState({ scrolled: true })
+      return
+    }
     if (!this.state.scrolled && event.target.scrollTop >= 200) {
-      this.setState({ scrolled: true });
+      this.setState({ scrolled: true })
     } else if (this.state.scrolled && (event.target.scrollTop < 200 || !event.isTrusted)) {
-      this.setState({ scrolled: false });
+      this.setState({ scrolled: false })
     }
   }
 
-  handleResetNav = (event) => {
-    this.setState({ scrolled: false });
+  handleResetNav = () => {
+    this.setState({ scrolled: this.props.isMobile })
   }
 
   render () {
@@ -95,25 +146,30 @@ export default class NavBar extends React.Component {
         padding: '1.5rem'
       },
       logoBig: {
-        fontSize: '3rem'
+        fontSize: '3rem',
+        letterSpacing: '4px'
       },
       logoSmall: {
         fontSize: '2rem'
       }
     }
     const { scrolledStyle, unscrolledStyle, logoBig, logoSmall } = styles;
+
+    const navItems = (
+      <>
+        <Link href="/" to="/">HOME</Link>
+        <Link href="/about" to="/about">ABOUT</Link>
+        <Link href="/services" to="/services">SERVICES</Link>
+        <Link href="/contact" to="/contact">CONTACT</Link>
+      </>
+    )
     return (
       <StyledNavBar style={this.state.scrolled ? scrolledStyle : unscrolledStyle}>
         <div className="logo" style={this.state.scrolled ? logoSmall : logoBig}>
           <img src={logo} alt="logo" />
-          A A B E E  L E E
+          AABEE LEE
         </div>
-        <nav>
-          <Link href="/" to="/">HOME</Link>
-          <Link href="/about" to="/about">ABOUT</Link>
-          <Link href="/services" to="/services">SERVICES</Link>
-          <Link href="/contact" to="/contact">CONTACT</Link>
-        </nav>
+        {this.props.isMobile ? (<Menu noOverlay right width="30vh">{navItems}</Menu>) : (<nav>{navItems}</nav>)}
       </StyledNavBar>
     )
   }

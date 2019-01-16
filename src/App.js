@@ -21,38 +21,53 @@ const GlobalStyle = createGlobalStyle`
 const StyledDiv = styled.div`
 `
 
-function App() {
-  return (
-    <Root>
-      <GlobalStyle />
-      <NavBar />
-      <StyledDiv className="content">
-        <Routes>
-          {({ routePath, getComponentForPath }) => {
-            return (
-              <Transition
-                native
-                items={routePath}
-                onStart={()=>{window.dispatchEvent(new CustomEvent("resetNav"))}}
-                from={{ position: 'absolute', transform: 'translateY(100px)', opacity: 0 }}
-                enter={{ transform: 'translateY(0px)', opacity: 1 }}
-                leave={{ transform: 'translateY(100px)', opacity: 0 }}
-              >
-                {item => props => {
-                  const Comp = getComponentForPath(item)
-                  return (
-                    <animated.div style={props}>
-                      <Comp />
-                    </animated.div>
-                  )
-                }}
-              </Transition>
-            )
-          }}
-        </Routes>
-      </StyledDiv>
-    </Root>
-  )
-}
+export default class App extends React.Component {
+  state = { isMobile: false }
 
-export default App
+  componentDidMount () {
+    this.handleResize()
+    window.addEventListener('resize', this.handleResize, true);
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('resize', this.handleResize, true);
+  }
+
+  handleResize = () => {
+    this.setState({ isMobile: window.innerWidth <= 830 })
+  }
+
+  render () {
+    return (
+      <Root>
+        <GlobalStyle />
+        <NavBar isMobile={this.state.isMobile} />
+        <StyledDiv className="content">
+          <Routes>
+            {({ routePath, getComponentForPath }) => {
+              return (
+                <Transition
+                  native
+                  items={routePath}
+                  onStart={() => { window.dispatchEvent(new CustomEvent("resetNav")) }}
+                  from={{ position: 'absolute', transform: 'translateY(100px)', opacity: 0 }}
+                  enter={{ transform: 'translateY(0px)', opacity: 1 }}
+                  leave={{ transform: 'translateY(100px)', opacity: 0 }}
+                >
+                  {item => props => {
+                    const Comp = getComponentForPath(item)
+                    return (
+                      <animated.div style={props}>
+                        <Comp isMobile={this.state.isMobile} />
+                      </animated.div>
+                    )
+                  }}
+                </Transition>
+              )
+            }}
+          </Routes>
+        </StyledDiv>
+      </Root>
+    )
+  }
+}
