@@ -19,6 +19,10 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const StyledDiv = styled.div`
+  .page {
+    position: 'absolute';
+    flex: 1 1 auto;
+  }
 `
 
 export default class App extends React.Component {
@@ -50,7 +54,7 @@ export default class App extends React.Component {
                   native
                   items={routePath}
                   onStart={() => { window.dispatchEvent(new CustomEvent("resetNav")) }}
-                  from={{ position: 'absolute', transform: 'translateY(100px)', opacity: 0 }}
+                  from={{ transform: 'translateY(100px)', opacity: 0 }}
                   enter={{ transform: 'translateY(0px)', opacity: 1 }}
                   leave={{ transform: 'translateY(100px)', opacity: 0 }}
                 >
@@ -58,7 +62,7 @@ export default class App extends React.Component {
                     const Comp = getComponentForPath(item)
                     return (
                       <animated.div style={props}>
-                        <Comp isMobile={this.state.isMobile} />
+                        <Comp className="page" isMobile={this.state.isMobile} />
                       </animated.div>
                     )
                   }}
