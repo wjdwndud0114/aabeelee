@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import main_bg from '../media/main_bg.jpg'
 import img1 from '../media/img1.jpg'
+import img2 from '../media/img2.jpg'
+import img3 from '../media/img3.jpg'
 import interior from '../media/interior.jpg'
 
 const StyledIndex = styled.div`
@@ -40,31 +42,50 @@ const StyledIndex = styled.div`
     display: flex;
     align-content: center;
     justify-content: center;
+    text-align: center;
     padding: 8rem 5rem;
     font-size: 3rem;
     letter-spacing: 1.8px;
   }
   .images {
-    display: flex;
     width: 100%;
+    content: "";
+    display: table;
   }
   .images.small {
-
+    display: flex;
+    flex-direction: column;
   }
-  .images.big {
-
+  .images div {
+    width: 33.33333333%;
+    height: 30vh;
+    display: inline-block;
+    vertical-align: top;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
   }
-  .images img {
-    flex: 1 1 auto;
-    height: 350px;
+  .images.small div {
+    width: 100%;
+    height: 50vh;
   }
   .interior {
+    background-image: url(${interior});
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    height: 50vh;
+  }
+  .interior-message {
+    background-color: #fff;
     color: #000;
     display: flex;
     align-content: center;
     justify-content: center;
-    padding: 3rem;
+    padding: 5rem;
+    font-size: 1.4rem;
     letter-spacing: 1.3px;
+    text-align: center;
   }
 `
 
@@ -78,9 +99,18 @@ export default class index extends React.Component {
         height: '33.33vh',
         marginTop: '7rem',
         transform: 'translate3D(-8px, 0, -1px) scale(4)'
+      },
+      img1s: {
+        backgroundImage: "url("+img1+")"
+      },
+      img2s: {
+        backgroundImage: "url("+img2+")"
+      },
+      img3s: {
+        backgroundImage: "url("+img3+")"
       }
     }
-    const { bgBig, bgSmall } = styles;
+    const { bgBig, bgSmall, img1s, img2s, img3s } = styles;
     return (
       <StyledIndex>
         <div className="main-parallax-container">
@@ -88,20 +118,18 @@ export default class index extends React.Component {
           <div className="content-container">
             <div className="main-content">
               <div className="testimonial">
-                <span>"Lorem Ipsum walla isnsr is esinihft airisto!"</span>
+                <span>"I never realized my hair's true potential."</span>
               </div>
-              <div className="images">
-                <img src={img1} alt="image 1" />
-                <img src={img1} alt="image 1" />
-                <img src={img1} alt="image 1" />
+              <div className={this.props.isMobile ? "images small" : "images"}>
+                <div style={img1s} alt="ex1" />
+                <div style={img2s} alt="ex2" />
+                <div style={img3s} alt="ex3" />
               </div>
             </div>
-            <div className="last">
-              <span>Come in for a special experience and rediscover your hair.</span>
+            <div className="interior-message">
+              Come in for a special experience and rediscover your hair.
             </div>
-            <div className="interior">
-              <img src={interior} alt="interior" />
-            </div>
+            <div className="interior" />
           </div>
         </div>
       </StyledIndex>

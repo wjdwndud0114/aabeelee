@@ -20,8 +20,10 @@ const GlobalStyle = createGlobalStyle`
 
 const StyledDiv = styled.div`
   .page {
-    position: 'absolute';
-    flex: 1 1 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 `
 
@@ -61,8 +63,8 @@ export default class App extends React.Component {
                   {item => props => {
                     const Comp = getComponentForPath(item)
                     return (
-                      <animated.div style={props}>
-                        <Comp className="page" isMobile={this.state.isMobile} />
+                      <animated.div className="page" style={props}>
+                        <Comp isMobile={this.state.isMobile} />
                       </animated.div>
                     )
                   }}
