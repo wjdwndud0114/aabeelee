@@ -47,6 +47,10 @@ const StyledIndex = styled.div`
     font-size: 3rem;
     letter-spacing: 1.8px;
   }
+  .testimonial.small {
+    padding: 5rem;
+    font-size: 2.2rem;
+  }
   .images {
     width: 100%;
     content: "";
@@ -58,7 +62,7 @@ const StyledIndex = styled.div`
   }
   .images div {
     width: 33.33333333%;
-    height: 30vh;
+    height: 60vh;
     display: inline-block;
     vertical-align: top;
     background-size: cover;
@@ -74,7 +78,7 @@ const StyledIndex = styled.div`
     background-position: center;
     background-size: cover;
     display: flex;
-    height: 50vh;
+    height: 60vh;
   }
   .interior-message {
     background-color: #fff;
@@ -117,7 +121,7 @@ export default class index extends React.Component {
           <div className="main-img" style={this.props.isMobile ? bgSmall : bgBig} />
           <div className="content-container">
             <div className="main-content">
-              <div className="testimonial">
+              <div className={this.props.isMobile ? "small testimonial" : "testimonial"}>
                 <span>"I never realized my hair's true potential."</span>
               </div>
               <div className={this.props.isMobile ? "images small" : "images"}>
