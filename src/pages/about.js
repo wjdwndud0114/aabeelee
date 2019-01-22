@@ -2,10 +2,12 @@ import React from 'react'
 import styled from 'styled-components'
 
 import about_bg from '../media/about_bg.png'
+import person from '../media/person.jpg'
 
 const StyledAbout = styled.div`
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 
   .topbox {
     height: 14vh;
@@ -18,6 +20,42 @@ const StyledAbout = styled.div`
     height: 58px;
     width: 100%;
   }
+  .content {
+    display: flex;
+    width: 100%;
+    height: Calc(100vh - 14vh);
+  }
+  .content.small {
+    flex-direction: column;
+  }
+  .img-wrapper {
+    width: 50%;
+    padding: 5rem 2rem 5rem 5rem;
+  }
+  .img-wrapper.small {
+    width: auto;
+    padding: 0;
+  }
+  .img-wrapper .img {
+    background-image: url(${person});
+    background-position: top;
+    background-size: cover;
+    height: 60vh;
+  }
+  .bio {
+    width: 50%;
+    padding: 5rem 5rem 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .bio.small {
+    width: auto;
+    padding: 1.5rem;
+  }
+  .bio h1 {
+    margin-top: 0;
+  }
 `
 
 export default class about extends React.Component {
@@ -28,6 +66,18 @@ export default class about extends React.Component {
     return (
       <StyledAbout>
         <div className={ this.props.isMobile ? "small-topbox" : "topbox" } />
+        <div className={ this.props.isMobile ? "content small" : "content"}>
+          <div className={ this.props.isMobile ? "img-wrapper small" : "img-wrapper"}>
+            <div className="img" />
+          </div>
+          <div className={ this.props.isMobile ? "bio small" : "bio"}>
+            <h1>Hello there!</h1>
+            <p>Loren Ipsum ainw aonirf ofnesinfsuebsubeub sb sueb iuefbesufbesi ufbseiufb siufbsefiubuiwbuiwbfubeiufbweubdjgdbs iub eubwiue buewfbiuw ef. idnsfoienois nfosienfuo senfousefsoef. oeosinfiosenfois neoinsoienfoisenfio snoefn ifes noio isnos fni eosnseion.</p>
+            <p>Loren Ipsum ainw aonirf ofnesinfsuebsubeub sb sueb iuefbesufbesi ufbseiufb siufbsefiubuiwbuiwbfubeiufbweubdjgdbs iub eubwiue buewfbiuw ef. idnsfoienois nfosienfuo senfousefsoef. oeosinfiosenfois neoinsoienfoisenfio snoefn ifes noio isnos fni eosnseion.</p>
+            <p>Loren Ipsum ainw aonirf ofnesinfsuebsubeub sb sueb iuefbesufbesi ufbseiufb siufbsefiubuiwbuiwbfubeiufbweubdjgdbs iub eubwiue buewfbiuw ef. idnsfoienois nfosienfuo senfousefsoef. oeosinfiosenfois neoinsoienfoisenfio snoefn ifes noio isnos fni eosnseion.</p>
+            <p>Loren Ipsum ainw aonirf ofnesinfsuebsubeub sb sueb iuefbesufbesi ufbseiufb siufbsefiubuiwbuiwbfubeiufbweubdjgdbs iub eubwiue buewfbiuw ef. idnsfoienois nfosienfuo senfousefsoef. oeosinfiosenfois neoinsoienfoisenfio snoefn ifes noio isnos fni eosnseion.</p>
+          </div>
+        </div>
       </StyledAbout>
     )
   }

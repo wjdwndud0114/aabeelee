@@ -9,7 +9,7 @@ import './fonts/fonts.min.css'
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'Proxima Nova', Georgia, sans-serif;
+    font-family: 'Proxima Nova', Arial, sans-serif;
     font-weight: 300;
     font-size: 16px;
     margin: 0;

@@ -122,9 +122,9 @@ export default class NavBar extends React.Component {
       this.setState({ scrolled: true })
       return
     }
-    if (!this.state.scrolled && event.target.scrollTop >= 200) {
+    if (!this.state.scrolled && event.target.scrollTop >= 20) {
       this.setState({ scrolled: true })
-    } else if (this.state.scrolled && (event.target.scrollTop < 200 || !event.isTrusted)) {
+    } else if (this.state.scrolled && (event.target.scrollTop < 20 || !event.isTrusted)) {
       this.setState({ scrolled: false })
     }
   }
