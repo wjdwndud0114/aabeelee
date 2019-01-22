@@ -24,6 +24,7 @@ const StyledAbout = styled.div`
     display: flex;
     width: 100%;
     height: Calc(100vh - 14vh);
+    overflow: auto;
   }
   .content.small {
     flex-direction: column;
@@ -40,7 +41,7 @@ const StyledAbout = styled.div`
     background-image: url(${person});
     background-position: top;
     background-size: cover;
-    height: 60vh;
+    height: 100%;
   }
   .bio {
     width: 50%;
