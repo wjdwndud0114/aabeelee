@@ -34,7 +34,8 @@ const StyledAbout = styled.div`
     padding: 5rem 2rem 5rem 5rem;
   }
   .img-wrapper.small {
-    width: auto;
+    width: 100%;
+    height: 50vh;
     padding: 0;
   }
   .img-wrapper .img {
