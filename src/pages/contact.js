@@ -27,7 +27,9 @@ const StyledContact = styled.div`
     justify-content: center;
   }
   .content.small {
+    height: Calc(100vh - 58px);
     flex-direction: column;
+    display: block;
   }
   .bio {
     padding: 5rem;

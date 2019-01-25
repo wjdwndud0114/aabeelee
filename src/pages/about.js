@@ -27,7 +27,9 @@ const StyledAbout = styled.div`
     overflow: auto;
   }
   .content.small {
+    height: Calc(100vh - 58px);
     flex-direction: column;
+    display: block;
   }
   .img-wrapper {
     width: 50%;
