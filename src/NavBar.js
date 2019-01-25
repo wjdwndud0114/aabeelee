@@ -118,6 +118,7 @@ export default class NavBar extends React.Component {
   }
 
   handleScroll = (event) => {
+    if(event.target.className.includes("content")) return
     if(this.props.isMobile) {
       this.setState({ scrolled: true })
       return
