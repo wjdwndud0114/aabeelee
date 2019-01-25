@@ -105,7 +105,7 @@ const StyledNavBar = styled.div`
 `
 
 export default class NavBar extends React.Component {
-  state = { scrolled: false }
+  state = { scrolled: false, bmOpen: false }
 
   componentDidMount () {
     window.addEventListener('scroll', this.handleScroll, true);
@@ -157,10 +157,10 @@ export default class NavBar extends React.Component {
 
     const navItems = (
       <>
-        <Link href="/" to="/">HOME</Link>
-        <Link href="/about" to="/about">ABOUT</Link>
-        <Link href="/services" to="/services">SERVICES</Link>
-        <Link href="/contact" to="/contact">CONTACT</Link>
+        <Link onClick={() => this.setState({bmOpen: false})} href="/" to="/">HOME</Link>
+        <Link onClick={() => this.setState({bmOpen: false})} href="/about" to="/about">ABOUT</Link>
+        <Link onClick={() => this.setState({bmOpen: false})} href="/services" to="/services">SERVICES</Link>
+        <Link onClick={() => this.setState({bmOpen: false})} href="/contact" to="/contact">CONTACT</Link>
       </>
     )
     return (
@@ -169,7 +169,7 @@ export default class NavBar extends React.Component {
           <img src={logo} alt="logo" />
           AABEE LEE
         </div>
-        {this.props.isMobile ? (<Menu noOverlay right width="30vh">{navItems}</Menu>) : (<nav>{navItems}</nav>)}
+        {this.props.isMobile ? (<Menu noOverlay right onStateChange={state => this.setState({bmOpen: state.isOpen})} isOpen={this.state.bmOpen} width="30vh">{navItems}</Menu>) : (<nav>{navItems}</nav>)}
       </StyledNavBar>
     )
   }
