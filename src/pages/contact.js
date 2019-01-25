@@ -67,7 +67,7 @@ const StyledContact = styled.div`
   }
 `
 
-export default class about extends React.Component {
+export default class contact extends React.Component {
  componentDidMount() {
  } 
 
