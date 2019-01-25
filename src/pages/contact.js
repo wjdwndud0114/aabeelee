@@ -37,6 +37,7 @@ const StyledContact = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
+    height: 100%;
   }
   .bio.small {
     width: auto;
