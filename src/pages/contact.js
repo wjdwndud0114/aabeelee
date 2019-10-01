@@ -87,7 +87,7 @@ export default class contact extends React.Component {
             <p>Hours: Mon-Sat 10:00AM - 7:00PM</p>
             <div className="mapouter">
               <div className="gmap_canvas">
-                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=825%20S%20Hobart%20Blvd%2C%20Los%20Angeles%2C%20CA%2090005&t=&z=17&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" />
+                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=3116%20W%208th%20Street%2C%20Los%20Angeles%2C%20CA%2090005&t=&z=17&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" />
                 <a href="https://www.pureblack.de/internetagentur/" />
               </div>
             </div>
