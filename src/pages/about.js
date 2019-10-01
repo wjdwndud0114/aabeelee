@@ -75,11 +75,8 @@ export default class about extends React.Component {
             <div className="img" />
           </div>
           <div className={ this.props.isMobile ? "bio small" : "bio"}>
-            <h1>Hello there!</h1>
-            <p>Loren Ipsum ainw aonirf ofnesinfsuebsubeub sb sueb iuefbesufbesi ufbseiufb siufbsefiubuiwbuiwbfubeiufbweubdjgdbs iub eubwiue buewfbiuw ef. idnsfoienois nfosienfuo senfousefsoef. oeosinfiosenfois neoinsoienfoisenfio snoefn ifes noio isnos fni eosnseion.</p>
-            <p>Loren Ipsum ainw aonirf ofnesinfsuebsubeub sb sueb iuefbesufbesi ufbseiufb siufbsefiubuiwbuiwbfubeiufbweubdjgdbs iub eubwiue buewfbiuw ef. idnsfoienois nfosienfuo senfousefsoef. oeosinfiosenfois neoinsoienfoisenfio snoefn ifes noio isnos fni eosnseion.</p>
-            <p>Loren Ipsum ainw aonirf ofnesinfsuebsubeub sb sueb iuefbesufbesi ufbseiufb siufbsefiubuiwbuiwbfubeiufbweubdjgdbs iub eubwiue buewfbiuw ef. idnsfoienois nfosienfuo senfousefsoef. oeosinfiosenfois neoinsoienfoisenfio snoefn ifes noio isnos fni eosnseion.</p>
-            <p>Loren Ipsum ainw aonirf ofnesinfsuebsubeub sb sueb iuefbesufbesi ufbseiufb siufbsefiubuiwbuiwbfubeiufbweubdjgdbs iub eubwiue buewfbiuw ef. idnsfoienois nfosienfuo senfousefsoef. oeosinfiosenfois neoinsoienfoisenfio snoefn ifes noio isnos fni eosnseion.</p>
+            <h1>Aabee Lee</h1>
+            <p>글씨난 한국에서 팝스 헤어라인 과 뷰티오즈를 경영했음  각종미용대회와  각종</p>
           </div>
         </div>
       </StyledAbout>

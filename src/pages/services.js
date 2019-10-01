@@ -76,8 +76,8 @@ export default class services extends React.Component {
             <div className="sblock">
               <div className="service-container">
                 <h2>Hair Cut</h2>
-                <Service name="Male" price="35" />
-                <Service name="Female" price="50" />
+                <Service name="Male" price="20" />
+                <Service name="Female" price="30" />
               </div>
               <div className="service-container">
                 <h2>Styling</h2>
@@ -96,11 +96,11 @@ export default class services extends React.Component {
               </div>
               <div className="service-container">
                 <h2>Perm</h2>
-                <Service name="Basic Perm" price="90" />
-                <Service name="Digital Perm" price="150" />
-                <Service name="Setting Perm" price="200" />
-                <Service name="Keratin Magic Perm" price="250" />
-                <Service name="Magic Straight Perm" price="200" />
+                <Service name="Basic Perm" price="60" />
+                <Service name="Digital Perm" price="130" />
+                <Service name="Setting Perm" price="120" />
+                <Service name="Keratin Magic Perm" price="150" />
+                <Service name="Magic Straight Perm" price="150" />
               </div>
             </div>
           </div>

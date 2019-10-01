@@ -5,6 +5,9 @@ import main_bg from '../media/main_bg.jpg'
 import img1 from '../media/img1.jpg'
 import img2 from '../media/img2.jpg'
 import img3 from '../media/img3.jpg'
+import img4 from '../media/img4.jpg'
+import img5 from '../media/img5.jpg'
+import img6 from '../media/img6.jpg'
 import interior from '../media/interior.jpg'
 
 const StyledIndex = styled.div`
@@ -112,9 +115,18 @@ export default class index extends React.Component {
       },
       img3s: {
         backgroundImage: "url("+img3+")"
+      },
+      img4s: {
+        backgroundImage: "url("+img4+")"
+      },
+      img5s: {
+        backgroundImage: "url("+img5+")"
+      },
+      img6s: {
+        backgroundImage: "url("+img6+")"
       }
     }
-    const { bgBig, bgSmall, img1s, img2s, img3s } = styles;
+    const { bgBig, bgSmall, img1s, img2s, img3s, img4s, img5s, img6s } = styles;
     return (
       <StyledIndex>
         <div className="main-parallax-container">
@@ -133,7 +145,12 @@ export default class index extends React.Component {
             <div className="interior-message">
               Come in for a special experience and rediscover your hair.
             </div>
-            <div className="interior" />
+            {/* <div className="interior" /> */}
+            <div className={this.props.isMobile ? "images small" : "images"}>
+              <div style={img4s} alt="ex1" />
+              <div style={img5s} alt="ex2" />
+              <div style={img6s} alt="ex3" />
+            </div>
           </div>
         </div>
       </StyledIndex>

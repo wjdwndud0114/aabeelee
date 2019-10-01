@@ -82,12 +82,12 @@ export default class contact extends React.Component {
           <div className={ this.props.isMobile ? "bio small" : "bio"}>
             <h1>Contact Me</h1>
             <h2>Aabee Lee</h2>
-            <p>213.604.3033</p>
-            <p>testemail@gmail.com</p>
+            <p>213.926.2444</p>
+            <p>aabeeinchrit@gmail.com</p>
             <p>Hours: Mon-Sat 10:00AM - 7:00PM</p>
             <div className="mapouter">
               <div className="gmap_canvas">
-                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=129%20S%20Western%20Ave%2C%20Los%20Angeles%2C%20CA%2090004&t=&z=17&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" />
+                <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=825%20S%20Hobart%20Blvd%2C%20Los%20Angeles%2C%20CA%2090005&t=&z=17&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" />
                 <a href="https://www.pureblack.de/internetagentur/" />
               </div>
             </div>
