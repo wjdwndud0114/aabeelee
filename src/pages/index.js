@@ -138,7 +138,7 @@ export default class index extends React.Component {
         backgroundImage: "url("+img9+")"
       }
     }
-    const { bgBig, bgSmall, img1s, img2s, img3s, img4s, img5s, img6s } = styles;
+    const { bgBig, bgSmall, img1s, img2s, img3s, img4s, img5s, img6s, img7s, img8s, img9s } = styles;
     return (
       <StyledIndex>
         <div className="main-parallax-container">
