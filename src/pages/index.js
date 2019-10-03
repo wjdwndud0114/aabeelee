@@ -8,6 +8,9 @@ import img3 from '../media/img3.jpg'
 import img4 from '../media/img4.jpg'
 import img5 from '../media/img5.jpg'
 import img6 from '../media/img6.jpg'
+import img7 from '../media/img7.jpg'
+import img8 from '../media/img8.jpg'
+import img9 from '../media/img9.jpg'
 import interior from '../media/interior.jpg'
 
 const StyledIndex = styled.div`
@@ -124,6 +127,15 @@ export default class index extends React.Component {
       },
       img6s: {
         backgroundImage: "url("+img6+")"
+      },
+      img7s: {
+        backgroundImage: "url("+img7+")"
+      },
+      img8s: {
+        backgroundImage: "url("+img8+")"
+      },
+      img9s: {
+        backgroundImage: "url("+img9+")"
       }
     }
     const { bgBig, bgSmall, img1s, img2s, img3s, img4s, img5s, img6s } = styles;
@@ -147,9 +159,14 @@ export default class index extends React.Component {
             </div>
             {/* <div className="interior" /> */}
             <div className={this.props.isMobile ? "images small" : "images"}>
-              <div style={img4s} alt="ex1" />
-              <div style={img5s} alt="ex2" />
-              <div style={img6s} alt="ex3" />
+              <div style={img4s} alt="ex4" />
+              <div style={img5s} alt="ex5" />
+              <div style={img6s} alt="ex6" />
+            </div>
+            <div className={this.props.isMobile ? "images small" : "images"}>
+              <div style={img7s} alt="ex7" />
+              <div style={img8s} alt="ex8" />
+              <div style={img9s} alt="ex9" />
             </div>
           </div>
         </div>
